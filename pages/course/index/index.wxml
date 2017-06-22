@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view scroll-y height="100%" class="scroll">
+    <view class="search">
+      <input bindconfirm="search" placeholder="搜索" class="input" placeholder-class="placeholder"/>
+    </view>
+    <view class="block">
+      <view class="title">分类一</view>
+      <block wx:key="id" wx:for="{{courseList}}">
+        <navigator hover-class="nav-hover" url="../detail/detail?id={{item.id}}">
+          <view class="course_item">
+            <view class="course_title">{{item.title}}</view>
+            <view class="course_summary">{{item.summary}}</view>
+          </view>
+        </navigator>
+      </block> 
+      <navigator url="../fullCourse/fullCourse?id=test">
+        <view class="more">查看更多</view>
+      </navigator>
+    </view>
+    <view class="block">
+      <view class="title">分类一</view>
+      <block wx:key="id" wx:for="{{courseList}}">
+        <navigator hover-class="nav-hover" url="../detail/detail?id={{item.id}}">
+          <view class="course_item">
+            <view class="course_title">{{item.title}}</view>
+            <view class="course_summary">{{item.summary}}</view>
+          </view>
+        </navigator>
+      </block> 
+      <navigator url="../fullCourse/fullCourse?id=test">
+        <view class="more">查看更多</view>
+      </navigator>
+    </view>
+  </scroll-view>
+</view>

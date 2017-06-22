@@ -1,0 +1,136 @@
+/* pages/course/detail/detail.wxss */
+.detail{
+  padding: 20rpx;
+}
+.title{
+  font-size: 1.2rem;
+  margin: 60rpx 0 30rpx;
+}
+.other{
+  font-size: 0.7rem;
+  margin-top: 8rpx;
+}
+.subHeader{
+  font-size: 0.9rem;
+  margin: 30rpx 0;
+}
+.summary{
+  font-size: .6rem;
+  margin-bottom: 30rpx;
+}
+.linkWra{
+  margin: 4rpx 0;
+}
+.linkWra::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.link{
+  color: rgb(0,138,255);
+  font-size: .6rem;
+  float: left;
+  padding: 7rpx 0;
+}
+.tip{
+  font-size: .6rem;
+}
+.copy{
+  padding: 6rpx;
+  border: 1px solid rgb(0,138,255);
+  border-radius: 6rpx;
+  float: right;
+  font-size: .6rem;
+  color: rgb(0,138,255);
+}
+.teachWra{
+  padding: 20rpx 0;
+  border-bottom: 1px solid #ccc;
+}
+.teachWra:last-child{
+  border-bottom: none;
+}
+.teachWra::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.avatar{
+  width: 180rpx;
+  height: 180rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.name{
+  font-size: .9rem;
+  margin-top: 10rpx;
+}
+.intro{
+  font-size: .6rem;
+  color: #999;
+  margin-top: 20rpx;
+}
+.more{
+  font-size: 24rpx;
+  padding-top: 20rpx;
+  color: cornflowerblue;
+}
+.more .iconfont{
+  float: right;
+}
+.comment{
+  font-size: .6rem;
+  color: #666;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #ccc;
+}
+.comment::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.msg{
+  float: left;
+  width: 600rpx;
+}
+.liked{
+  color: rgb(0,138,255);
+}
+.like{
+  width: 70rpx;
+  text-align: right;
+  float: right;
+}
+.iconfont{
+  display: inline;
+}
+.comment:last-child{
+  border-bottom: none;
+}
+.edit{
+  font-size: .6rem;
+  margin-top: .3rem;
+  float: right;
+  color: rgb(0,138,255);
+}
+.modal{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.inputWra{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background-color: #f2f2f2;
+}
+input{
+  font-size: 24rpx;
+  background-color: #fff;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}

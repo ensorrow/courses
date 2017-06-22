@@ -1,0 +1,21 @@
+<!--pages/course/search/search.wxml-->
+<!--index.wxml-->
+<view class="container">
+  <scroll-view scroll-y height="100%" class="scroll">
+    <view class="search">
+      <input bindconfirm="search" placeholder="搜索" class="input" placeholder-class="placeholder" value="{{value}}"/>
+    </view>
+    <view class="block">
+      <view class="title">相关结果</view>
+      <block wx:key="id" wx:for="{{courseList}}">
+        <navigator hover-class="nav-hover" url="../detail/detail?id={{item.id}}">
+          <view class="course_item">
+              <view class="course_title">{{item.title}}</view>
+              <view class="course_summary">{{item.summary}}</view>
+          </view>
+        </navigator>
+      </block> 
+    </view>
+  </scroll-view>
+</view>
+

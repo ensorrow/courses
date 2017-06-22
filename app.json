@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/course/index/index",
+    "pages/course/fullCourse/fullCourse",
+    "pages/course/search/search",
+    "pages/course/detail/detail",
+
+    "pages/teacher/index/index",
+    "pages/more/index/index"
+  ],
+  "tabBar": {
+    "selectedColor": "#3f7ade",
+    "list": [
+      {
+        "pagePath": "pages/course/index/index",
+        "text": "课程",
+        "iconPath": "static/imgs/book.png",
+        "selectedIconPath": "static/imgs/book (1).png"
+      },
+      {
+        "pagePath": "pages/teacher/index/index",
+        "text": "教师",
+        "iconPath": "static/imgs/teacher.png",
+        "selectedIconPath": "static/imgs/teacher (1).png"
+      },
+      {
+        "pagePath": "pages/more/index/index",
+        "text": "更多",
+        "iconPath": "static/imgs/more.png",
+        "selectedIconPath": "static/imgs/more (1).png"
+      }
+    ]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "rgb(89,48,255)",
+    "navigationBarTitleText": "选课宝典",
+    "navigationBarTextStyle":"#fff"
+  }
+}

@@ -1,0 +1,47 @@
+<!--pages/course/detail/detail.wxml-->
+<view class="container detail">
+  <view class="title">{{title}}</view>
+  <view class="other">分类：{{type}}</view>
+  <view class="other">学分：{{goal}}</view>
+  <view class="block">
+    <view class="subHeader">课程简介</view>
+    <view class="summary">{{summary}}</view>
+  </view>
+  <view class="block">
+    <view class="subHeader">课程资料</view>
+    <view wx:key="{{index}}" wx:for="{{resources}}">
+      <view class="linkWra">
+        <view class="link" bindtap="review" data-link="{{item.link}}">{{item.name}}</view>
+        <view class="copy" data-link="{{item.link}}" bindtap="copy">复制链接</view>
+      </view>
+    </view>
+    <view class="tip">* 点击可预览，要下载请复制链接在浏览器中打开</view>
+  </view>
+  <view class="block">
+    <view class="subHeader">任课老师</view>
+    <block wx:key="{{index}}" wx:for="{{teachers}}">
+      <navigator class="teachWra" url="{{'../../teacher/detail/detail?id='+item.id}}">
+        <image class="avatar" src="{{item.avatar}}"></image>
+        <view class="name">{{item.name}}</view>
+        <view class="intro">{{item.intro}}</view>
+      </navigator>
+    </block>
+    <navigator url="../../teacher/fullCourse/fullCourse?id=test">
+      <view class="more">查看更多 <view class="iconfont icon-more"></view> </view>
+    </navigator>
+  </view>
+  <view class="block">
+    <view class="subHeader">评论 <view class="iconfont icon-pen edit" bindtap="showInput"> 写评论</view></view>
+    <block wx:key="{{index}}" wx:for="{{comments}}">
+      <view class="comment">
+        <view class="msg">{{item.comment}}</view>
+        <view class="like liked"><view class="iconfont icon-like"></view> {{item.like}}</view>
+      </view>
+    </block>
+  </view>
+  <view wx:if="{{isShow}}" bindtap="hideInput" class="modal">
+    <view class="inputWra">
+      <input placeholder="发表你的意见~" catchtap="stopPop" bindconfirm="sendComment" auto-focus/>
+    </view>
+  </view>
+</view>
