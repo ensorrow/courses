@@ -1,11 +1,11 @@
 <!--pages/course/detail/detail.wxml-->
 <view class="container detail">
   <view class="title">{{title}}</view>
-  <view class="other">分类：{{type}}</view>
-  <view class="other">学分：{{goal}}</view>
+  <view class="other">分类：{{category}}</view>
+  <view class="other">学分：{{credit}}</view>
   <view class="block">
     <view class="subHeader">课程简介</view>
-    <view class="summary">{{summary}}</view>
+    <view class="summary">{{content}}</view>
   </view>
   <view class="block">
     <view class="subHeader">课程资料</view>

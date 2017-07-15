@@ -4,32 +4,18 @@
     <view class="search">
       <input bindconfirm="search" placeholder="搜索" class="input" placeholder-class="placeholder"/>
     </view>
-    <view class="block">
-      <view class="title">分类一</view>
-      <block wx:key="id" wx:for="{{courseList}}">
+    <view wx:key="{{index}}" wx:for="{{courseList}}" wx:for-item="cate" class="block">
+      <view class="title">{{cate.name}}</view>
+      <block wx:key="id" wx:for="{{cate.data}}">
         <navigator hover-class="nav-hover" url="../detail/detail?id={{item.id}}">
           <view class="course_item">
             <view class="course_title">{{item.title}}</view>
-            <view class="course_summary">{{item.summary}}</view>
+            <view class="course_summary">{{item.excerpt}}</view>
           </view>
         </navigator>
       </block> 
-      <navigator url="../fullCourse/fullCourse?id=test">
-        <view class="more">查看更多</view>
-      </navigator>
-    </view>
-    <view class="block">
-      <view class="title">分类一</view>
-      <block wx:key="id" wx:for="{{courseList}}">
-        <navigator hover-class="nav-hover" url="../detail/detail?id={{item.id}}">
-          <view class="course_item">
-            <view class="course_title">{{item.title}}</view>
-            <view class="course_summary">{{item.summary}}</view>
-          </view>
-        </navigator>
-      </block> 
-      <navigator url="../fullCourse/fullCourse?id=test">
-        <view class="more">查看更多</view>
+      <navigator url="../fullCourse/fullCourse?name={{cate.name}}">
+        <view class="more">查看更多 <view class="iconfont icon-more"></view></view>
       </navigator>
     </view>
   </scroll-view>

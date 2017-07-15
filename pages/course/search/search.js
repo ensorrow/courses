@@ -1,4 +1,6 @@
 // pages/course/search/search.js
+import req from '../../../utils/request';
+
 Page({
   data: {
     value: "",
@@ -30,6 +32,13 @@ Page({
     this.getResult(event.detail.value);
   },
   getResult(value) {
-    console.log(value);
+    req.get('/post/s?q='+value+'&page=1')
+      .then((res) => {
+        this.setData({
+          courseList: res.data.data.filter(
+            (item) => item.type === 'course'
+          )
+        });
+      })
   }
 })

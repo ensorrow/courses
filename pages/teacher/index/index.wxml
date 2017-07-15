@@ -1,6 +1,21 @@
-<!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log" wx:key="*this">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<!--index.wxml-->
+<view class="container">
+  <scroll-view scroll-y height="100%" class="scroll">
+    <view class="search">
+      <input bindconfirm="search" placeholder="搜索" class="input" placeholder-class="placeholder"/>
+    </view>
+    <view class="block">
+      <view class="title">分类一</view>
+      <block wx:key="{{index}}" wx:for="{{teachers}}">
+        <navigator class="teachWra" url="{{'../../teacher/detail/detail?id='+item.id}}">
+          <image class="avatar" src="{{item.avatar}}"></image>
+          <view class="name">{{item.name}}</view>
+          <view class="intro">{{item.intro}}</view>
+        </navigator>
+      </block>
+      <navigator url="../fullList/fullList?id=test">
+        <view class="more">查看更多 <view class="iconfont icon-more"></view></view>
+      </navigator>
+    </view>
+  </scroll-view>
 </view>

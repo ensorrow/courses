@@ -2,12 +2,12 @@
 <view class="container">
   <scroll-view scroll-y height="100%" class="scroll">
     <view class="block">
-      <view class="title">分类一</view>
-      <block wx:key="id" wx:for="{{courseList}}">
+      <view class="title">{{categoryName}}</view>
+      <block wx:key="{{index}}" wx:for="{{courseList}}">
         <navigator hover-class="nav-hover" url="../detail/detail?id={{item.id}}">
           <view class="course_item">
               <view class="course_title">{{item.title}}</view>
-              <view class="course_summary">{{item.summary}}</view>
+              <view class="course_summary">{{item.excerpt}}</view>
           </view>
         </navigator>
       </block>

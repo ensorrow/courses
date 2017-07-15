@@ -1,4 +1,4 @@
-/* pages/course/detail/detail.wxss */
+/* pages/teacher/detail/detail.wxss */
 .detail{
   padding: 20rpx;
 }
@@ -18,57 +18,18 @@
   font-size: .6rem;
   margin-bottom: 30rpx;
 }
-.linkWra{
-  margin: 4rpx 0;
-}
-.linkWra::after{
-  content: '';
-  display: block;
-  clear: both;
-}
-.link{
-  color: rgb(0,138,255);
-  font-size: .6rem;
-  float: left;
-  padding: 7rpx 0;
-}
-.tip{
-  font-size: .6rem;
-}
-.copy{
-  padding: 6rpx;
-  border: 1px solid rgb(0,138,255);
-  border-radius: 6rpx;
-  float: right;
-  font-size: .6rem;
-  color: rgb(0,138,255);
-}
-.teachWra{
-  padding: 20rpx 0;
+.course_item{
+  padding: 40rpx 0;
   border-bottom: 1px solid #ccc;
 }
-.teachWra:last-child{
-  border-bottom: none;
+.course_title{
+  color: #333;
+  font-size: 32rpx;
+  margin-bottom: 24rpx;
 }
-.teachWra::after{
-  content: '';
-  display: block;
-  clear: both;
-}
-.avatar{
-  width: 180rpx;
-  height: 180rpx;
-  float: left;
-  margin-right: 20rpx;
-}
-.name{
-  font-size: .9rem;
-  margin-top: 10rpx;
-}
-.intro{
-  font-size: .6rem;
+.course_summary{
   color: #999;
-  margin-top: 20rpx;
+  font-size: 24rpx;
 }
 .more{
   font-size: 24rpx;

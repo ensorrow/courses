@@ -1,14 +1,36 @@
-//logs.js
-var util = require('../../../utils/util.js')
 Page({
   data: {
-    logs: []
+    teachers: [
+      {
+        id: '001',
+        avatar: '../../../static/imgs/avatar.jpg',
+        name: '白宇',
+        intro: '帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎'
+      },
+      {
+        id: '001',
+        avatar: '../../../static/imgs/avatar.jpg',
+        name: '白宇',
+        intro: '帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎'
+      },
+      {
+        id: '001',
+        avatar: '../../../static/imgs/avatar.jpg',
+        name: '白宇',
+        intro: '帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎'
+      },
+      {
+        id: '001',
+        avatar: '../../../static/imgs/avatar.jpg',
+        name: '白宇',
+        intro: '帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎'
+      }
+    ]
   },
-  onLoad: function () {
-    this.setData({
-      logs: (wx.getStorageSync('logs') || []).map(function (log) {
-        return util.formatTime(new Date(log))
-      })
-    })
+  //事件处理函数
+  search(event) {
+    wx.navigateTo({
+      url: '../search/search?value=' + event.detail.value
+    });
   }
 })

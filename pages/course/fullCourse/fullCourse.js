@@ -1,36 +1,16 @@
+import req from '../../../utils/request';
+
 Page({
   data: {
-    courseList: [
-      {
-        id: 1,
-        title: '工科数学分析',
-        summary: '圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的'
-      },
-      {
-        id: 2,
-        title: '工科数学分析2',
-        summary: '圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的'
-      },
-      {
-        id: 3,
-        title: '工科数学分析3',
-        summary: '圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的'
-      },
-      {
-        id: 1,
-        title: '工科数学分析',
-        summary: '圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的'
-      },
-      {
-        id: 2,
-        title: '工科数学分析2',
-        summary: '圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的'
-      },
-      {
-        id: 3,
-        title: '工科数学分析3',
-        summary: '圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的'
-      }
-    ]
+    courseList: null
+  },
+  onLoad(option) {
+    this.setData({
+      categoryName: option.name
+    });
+    req.get('/category/'+option.name+'/courses?page=1')
+      .then((res) => this.setData({
+        courseList: res.data.data
+      }));
   }
 })

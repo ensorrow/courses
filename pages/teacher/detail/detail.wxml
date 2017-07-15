@@ -1,0 +1,35 @@
+<!--pages/teachers/detail/detail.wxml-->
+<view class="container detail">
+  <view class="title">{{title}}</view>
+  <view class="other">学院：{{department}}</view>
+  <view class="other">Email：{{email}}</view>
+  <view class="block">
+    <view class="subHeader">个人简介</view>
+    <view class="summary">{{intro}}</view>
+  </view>
+  <view class="block">
+    <view class="subHeader">授课课程</view>
+    <block wx:key="{{index}}" wx:for="{{courses}}">
+      <navigator hover-class="nav-hover" url="../../courses/detail/detail?id={{item.id}}">
+        <view class="course_item">
+          <view class="course_title">{{item.title}}</view>
+          <view class="course_summary">{{item.summary}}</view>
+        </view>
+      </navigator>
+    </block> 
+  </view>
+  <view class="block">
+    <view class="subHeader">评论 <view class="iconfont icon-pen edit" bindtap="showInput"> 写评论</view></view>
+    <block wx:key="{{index}}" wx:for="{{comments}}">
+      <view class="comment">
+        <view class="msg">{{item.comment}}</view>
+        <view class="like liked"><view class="iconfont icon-like"></view> {{item.like}}</view>
+      </view>
+    </block>
+  </view>
+  <view wx:if="{{isShow}}" bindtap="hideInput" class="modal">
+    <view class="inputWra">
+      <input placeholder="发表你的意见~" catchtap="stopPop" bindconfirm="sendComment" auto-focus/>
+    </view>
+  </view>
+</view>

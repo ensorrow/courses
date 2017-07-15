@@ -1,10 +1,12 @@
 // pages/course/detail/detail.js
+import req from '../../../utils/request';
+
 Page({
   data: {
     title: "大学物理",
-    type: "分类1",
-    goal: "3.5",
-    summary: "大学物理，是大学理工科类的一门基础课程，通过课程的学习，使学生熟悉自然界物质的结构，性质，相互作用及其运动的基本规律，为后继专业基础与专业课程的学习及进一步获取有关知识奠定必要的物理基础。但工科专业以力学基础和电磁学为主要授课。",
+    category: "分类1",
+    credit: "3.5",
+    content: "大学物理，是大学理工科类的一门基础课程，通过课程的学习，使学生熟悉自然界物质的结构，性质，相互作用及其运动的基本规律，为后继专业基础与专业课程的学习及进一步获取有关知识奠定必要的物理基础。但工科专业以力学基础和电磁学为主要授课。",
     resources: [
       {
         link: 'http://lvzheyang.top',
@@ -57,7 +59,19 @@ Page({
     ]
   },
   onLoad(options) {
-  
+    this.setData({
+      id: options.id
+    });
+    req.get('/post/'+options.id)
+      .then((res) => {
+        this.setData(Object.assign({}, res.data));
+      });
+    req.get('/post/'+options.id+'/comment?page=1')
+      .then((res) => {
+        this.setData({
+          comments: res.data.data
+        });
+      });
   },
   showInput() {
     this.setData({
@@ -77,10 +91,19 @@ Page({
       comment: event.detail.value,
       like: 0
     };
-    this.setData({
-      comments: this.data.comments.concat(comment)
-    });
-    this.hideInput();
+    req.post('/post/' + this.data.id + '/comment', { content: event.detail.value})
+      .then(() => {
+        wx.showToast({
+          title: '评论成功',
+          icon: 'success'
+        });
+      })
+      .then(() => {
+        this.setData({
+          comments: this.data.comments.concat(comment)
+        });
+        this.hideInput();        
+      });
   },
   copy(event) {
     const link = event.target.dataset.link;

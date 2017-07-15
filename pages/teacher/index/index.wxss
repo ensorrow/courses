@@ -1,8 +1,61 @@
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+.search{
+  height: 60rpx;
+  padding: 10rpx;
+  background: #f2f2f2;
 }
-.log-item {
-  margin: 10rpx;
+.input{
+  background: #fff;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+  padding: 0 10rpx;
+}
+.placeholder{
+  text-align: center;
+}
+.teachWra{
+  padding: 20rpx 0;
+  border-bottom: 1px solid #ccc;
+}
+.teachWra:last-child{
+  border-bottom: none;
+}
+.teachWra::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.avatar{
+  width: 180rpx;
+  height: 180rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.name{
+  font-size: .9rem;
+  margin-top: 10rpx;
+}
+.intro{
+  font-size: .6rem;
+  color: #999;
+  margin-top: 20rpx;
+}
+.title{
+  border-bottom: 1px solid #ccc;
+  font-size: 24rpx;
+  color: #999;
+  padding-bottom: 20rpx;
+}
+.more{
+  font-size: 24rpx;
+  padding-top: 20rpx;
+  color: cornflowerblue;
+}
+.block{
+  padding: 20rpx;
+  margin-bottom: 40rpx;
+  background: #fff;
+}
+.scroll{
+  background: #f2f2f2;
+  flex: 1;
 }

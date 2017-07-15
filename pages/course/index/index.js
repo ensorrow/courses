@@ -1,20 +1,63 @@
+import req from '../../../utils/request';
+
 Page({
   data: {
     courseList: [
       {
-        id: 1,
-        title: '工科数学分析',
-        summary: '圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的'
+        name: "工科一",
+        data: [
+          {
+            "id": 2,
+            "type": "course",
+            "title": "高等数学",
+            "excerpt": "高等数学",
+            "categories": [
+              "工科二",
+              "理科",
+              "工科一"
+            ],
+            "visit_count": 0
+          },
+          {
+            "id": 3,
+            "type": "course",
+            "title": "大学物理",
+            "excerpt": "大学物理",
+            "categories": [
+              "工科一",
+              "工科二"
+            ],
+            "visit_count": 0
+          }
+        ]
       },
       {
-        id: 2,
-        title: '工科数学分析2',
-        summary: '圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的'
-      },
-      {
-        id: 3,
-        title: '工科数学分析3',
-        summary: '圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的'
+        name: "工科二",
+        data: [
+          {
+            "id": 2,
+            "type": "course",
+            "title": "高等数学",
+            "excerpt": "高等数学",
+            "categories": [
+              "工科二",
+              "理科",
+              "工科一"
+            ],
+            "visit_count": 0
+          },
+          {
+            "id": 3,
+            "type": "course",
+            "title": "大学物理",
+            "excerpt": "大学物理",
+            "categories": [
+              "工科一",
+              "工科二"
+            ],
+            "visit_count": 0
+          }
+        ]
       }
     ]
   },
@@ -24,8 +67,8 @@ Page({
       url: '../search/search?value='+event.detail.value
     });
   },
-  onLoad: function () {
-    console.log('onLoad')
-    
+  onLoad() {
+    req.get('/post/courses/categorized')
+      .then((data) => console.log(data));
   }
 })
