@@ -1,10 +1,12 @@
 // pages/course/search/search.js
+// common search
 import req from '../../../utils/request';
 
 Page({
   data: {
     value: "",
-    courseList: [
+    type: 'course',
+    dataList: [
       {
         id: 1,
         title: '工科数学分析',
@@ -24,7 +26,8 @@ Page({
   },
   onLoad(options) {
     this.setData({
-      value: options.value
+      value: options.value,
+      type: options.type || 'course'
     });
     this.getResult(options.value);
   },
@@ -34,11 +37,19 @@ Page({
   getResult(value) {
     req.get('/post/s?q='+value+'&page=1')
       .then((res) => {
-        this.setData({
-          courseList: res.data.data.filter(
-            (item) => item.type === 'course'
-          )
-        });
+        if(this.data.type === 'course') {
+          this.setData({
+            dataList: res.data.data.filter(
+              (item) => item.type === 'course'
+            )
+          });
+        } else {
+          this.setData({
+            dataList: res.data.data.filter(
+              (item) => item.type === 'teacher'
+            )
+          });
+        }
       })
   }
 })

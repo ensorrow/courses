@@ -6,15 +6,18 @@
       <input bindconfirm="search" placeholder="搜索" class="input" placeholder-class="placeholder" value="{{value}}"/>
     </view>
     <view class="block">
-      <view class="title">相关结果</view>
-      <block wx:key="id" wx:for="{{courseList}}">
-        <navigator hover-class="nav-hover" url="../detail/detail?id={{item.id}}">
-          <view class="course_item">
-              <view class="course_title">{{item.title}}</view>
-              <view class="course_summary">{{item.summary}}</view>
-          </view>
-        </navigator>
-      </block> 
+      <view class="title">{{type === 'course' ? '相关课程' : '相关教师'}}</view>
+      <navigator wx:if="{{type === 'course'}}" wx:key="{{index}}" wx:for="{{dataList}}" hover-class="nav-hover" url="../detail/detail?id={{item.id}}">
+        <view class="course_item">
+            <view class="course_title">{{item.title}}</view>
+            <view class="course_summary">{{item.excerpt}}</view>
+        </view>
+      </navigator>
+       <navigator wx:if="{{type === 'teacher'}}" wx:for="{{dataList}}" class="teachWra" hover-class="nav-hover" url="../../teacher/detail/detail?id={{item.id}}">
+        <image class="avatar" src="{{item.avatar}}"></image>
+        <view class="name">{{item.title}}</view>
+        <view class="intro">{{item.excerpt}}</view>
+      </navigator> 
     </view>
   </scroll-view>
 </view>

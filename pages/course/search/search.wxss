@@ -41,3 +41,37 @@
   color: #999;
   font-size: 24rpx;
 }
+.teachWra{
+  padding: 20rpx 0;
+  border-bottom: 1px solid #ccc;
+}
+.teachWra:last-child{
+  border-bottom: none;
+}
+.teachWra::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.avatar{
+  width: 180rpx;
+  height: 180rpx;
+  float: left;
+  margin-right: 20rpx;
+  background-color: #f2f2f2;
+}
+.name{
+  font-size: .9rem;
+  margin-top: 10rpx;
+}
+.intro{
+  font-size: .6rem;
+  color: #999;
+  margin-top: 20rpx;
+}
+.title{
+  border-bottom: 1px solid #ccc;
+  font-size: 24rpx;
+  color: #999;
+  padding-bottom: 20rpx;
+}

@@ -22,13 +22,10 @@
     <block wx:key="{{index}}" wx:for="{{teachers}}">
       <navigator class="teachWra" url="{{'../../teacher/detail/detail?id='+item.id}}">
         <image class="avatar" src="{{item.avatar}}"></image>
-        <view class="name">{{item.name}}</view>
-        <view class="intro">{{item.intro}}</view>
+        <view class="name">{{item.title}}</view>
+        <view class="intro">{{item.excerpt}}</view>
       </navigator>
     </block>
-    <navigator url="../../teacher/fullCourse/fullCourse?id=test">
-      <view class="more">查看更多 <view class="iconfont icon-more"></view> </view>
-    </navigator>
   </view>
   <view class="block">
     <view class="subHeader">评论 <view class="iconfont icon-pen edit" bindtap="showInput"> 写评论</view></view>

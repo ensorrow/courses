@@ -1,4 +1,6 @@
 // pages/teacher/detail/detail.js
+import req from '../../../utils/request';
+
 Page({
   data: {
     title: "白宇",
@@ -39,7 +41,19 @@ Page({
     ]
   },
   onLoad(options) {
-
+    this.setData({
+      id: options.id
+    });
+    req.get('/post/' + options.id)
+      .then((res) => {
+        this.setData(Object.assign({}, res.data));
+      });
+    req.get('/post/' + options.id + '/comment?page=1')
+      .then((res) => {
+        this.setData({
+          comments: res.data.data
+        });
+      });
   },
   showInput() {
     this.setData({
@@ -59,10 +73,19 @@ Page({
       comment: event.detail.value,
       like: 0
     };
-    this.setData({
-      comments: this.data.comments.concat(comment)
-    });
-    this.hideInput();
+    req.post('/post/' + this.data.id + '/comment', { content: event.detail.value })
+      .then(() => {
+        wx.showToast({
+          title: '评论成功',
+          icon: 'success'
+        });
+      })
+      .then(() => {
+        this.setData({
+          comments: this.data.comments.concat(comment)
+        });
+        this.hideInput();
+      });
   },
   copy(event) {
     const link = event.target.dataset.link;

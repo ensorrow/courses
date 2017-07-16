@@ -5,17 +5,14 @@
       <input bindconfirm="search" placeholder="搜索" class="input" placeholder-class="placeholder"/>
     </view>
     <view class="block">
-      <view class="title">分类一</view>
+      <!-- <view class="title">分类一</view> -->
       <block wx:key="{{index}}" wx:for="{{teachers}}">
         <navigator class="teachWra" url="{{'../../teacher/detail/detail?id='+item.id}}">
           <image class="avatar" src="{{item.avatar}}"></image>
-          <view class="name">{{item.name}}</view>
-          <view class="intro">{{item.intro}}</view>
+          <view class="name">{{item.title}}</view>
+          <view class="intro">{{item.excerpt}}</view>
         </navigator>
       </block>
-      <navigator url="../fullList/fullList?id=test">
-        <view class="more">查看更多 <view class="iconfont icon-more"></view></view>
-      </navigator>
     </view>
   </scroll-view>
 </view>

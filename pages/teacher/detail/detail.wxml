@@ -5,15 +5,15 @@
   <view class="other">Email：{{email}}</view>
   <view class="block">
     <view class="subHeader">个人简介</view>
-    <view class="summary">{{intro}}</view>
+    <view class="summary">{{content}}</view>
   </view>
   <view class="block">
     <view class="subHeader">授课课程</view>
     <block wx:key="{{index}}" wx:for="{{courses}}">
-      <navigator hover-class="nav-hover" url="../../courses/detail/detail?id={{item.id}}">
+      <navigator hover-class="nav-hover" url="../../course/detail/detail?id={{item.id}}">
         <view class="course_item">
           <view class="course_title">{{item.title}}</view>
-          <view class="course_summary">{{item.summary}}</view>
+          <view class="course_summary">{{item.excerpt}}</view>
         </view>
       </navigator>
     </block> 

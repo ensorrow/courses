@@ -1,36 +1,21 @@
+import req from '../../../utils/request';
+
 Page({
   data: {
-    teachers: [
-      {
-        id: '001',
-        avatar: '../../../static/imgs/avatar.jpg',
-        name: '白宇',
-        intro: '帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎'
-      },
-      {
-        id: '001',
-        avatar: '../../../static/imgs/avatar.jpg',
-        name: '白宇',
-        intro: '帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎'
-      },
-      {
-        id: '001',
-        avatar: '../../../static/imgs/avatar.jpg',
-        name: '白宇',
-        intro: '帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎'
-      },
-      {
-        id: '001',
-        avatar: '../../../static/imgs/avatar.jpg',
-        name: '白宇',
-        intro: '帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎'
-      }
-    ]
+    teachers: null
+  },
+  onLoad() {
+    req.get('/post/teachers?page=1')
+      .then(
+        (res) => this.setData({
+          teachers: res.data.data
+        })
+      )
   },
   //事件处理函数
   search(event) {
     wx.navigateTo({
-      url: '../search/search?value=' + event.detail.value
+      url: '../../course/search/search?type=teacher&value=' + event.detail.value
     });
   }
 })
