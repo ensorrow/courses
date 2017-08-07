@@ -3,60 +3,13 @@ import req from '../../../utils/request';
 
 Page({
   data: {
-    title: "大学物理",
-    category: "分类1",
-    credit: "3.5",
-    content: "大学物理，是大学理工科类的一门基础课程，通过课程的学习，使学生熟悉自然界物质的结构，性质，相互作用及其运动的基本规律，为后继专业基础与专业课程的学习及进一步获取有关知识奠定必要的物理基础。但工科专业以力学基础和电磁学为主要授课。",
-    resources: [
-      {
-        link: 'http://lvzheyang.top',
-        name: '南卷汇-大二上大学物理考试试题汇编.doc'
-      },
-      {
-        link: 'http://lvzheyang.top',
-        name: '大学物理.ppt'
-      },
-      {
-        link: 'http://lvzheyang.top',
-        name: '大学物理学霸笔记.pdf'
-      }
-    ],
-    teachers: [
-      {
-        id: '001',
-        avatar: '../../../static/imgs/avatar.jpg',
-        name: '白宇',
-        intro: '帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎'
-      },
-      {
-        id: '001',
-        avatar: '../../../static/imgs/avatar.jpg',
-        name: '白宇',
-        intro: '帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎'
-      },
-      {
-        id: '001',
-        avatar: '../../../static/imgs/avatar.jpg',
-        name: '白宇',
-        intro: '帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎'
-      },
-      {
-        id: '001',
-        avatar: '../../../static/imgs/avatar.jpg',
-        name: '白宇',
-        intro: '帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎帅气体贴，细心，广受女生欢迎'
-      }
-    ],
-    comments: [
-      {
-        comment: '这个课老难了这个课老难了这个课老难了这个课老难了这个课老难了这个课老难了这个课老难了这个课老难了这个课老难了这个课老难了这个课老难了这个课老难了这个课老难了这个课老难了',
-        like: 20
-      },
-      {
-        comment: '大学第一挂',
-        like: 26
-      }
-    ]
+    title: "",
+    category: "",
+    credit: "",
+    content: "",
+    resources: [],
+    teachers: [],
+    comments: []
   },
   onLoad(options) {
     this.setData({
@@ -119,5 +72,15 @@ Page({
         title: '复制失败！'
       }
     });
+  },
+  onShareAppMessage(){
+    return {
+      title: this.data.title,
+      success: function(){
+        wx.showToast({
+          title: '转发成功',
+        });
+      }
+    };
   }
 })

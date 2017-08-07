@@ -1,7 +1,7 @@
 <!--pages/course/search/search.wxml-->
 <!--index.wxml-->
 <view class="container">
-  <scroll-view scroll-y height="100%" class="scroll">
+  <scroll-view scroll-y bindscrolltolower="loadMore" class="scroll">
     <view class="search">
       <input bindconfirm="search" placeholder="搜索" class="input" placeholder-class="placeholder" value="{{value}}"/>
     </view>
@@ -13,7 +13,7 @@
             <view class="course_summary">{{item.excerpt}}</view>
         </view>
       </navigator>
-       <navigator wx:if="{{type === 'teacher'}}" wx:for="{{dataList}}" class="teachWra" hover-class="nav-hover" url="../../teacher/detail/detail?id={{item.id}}">
+       <navigator wx:if="{{type === 'teacher'}}" wx:key="{{index}}" wx:for="{{dataList}}" class="teachWra" hover-class="nav-hover" url="../../teacher/detail/detail?id={{item.id}}">
         <image class="avatar" src="{{item.avatar}}"></image>
         <view class="name">{{item.title}}</view>
         <view class="intro">{{item.excerpt}}</view>

@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <scroll-view scroll-y height="100%" class="scroll">
+  <scroll-view bindscrolltolower="loadMore" scroll-y class="scroll">
     <view class="block">
       <view class="title">{{categoryName}}</view>
       <block wx:key="{{index}}" wx:for="{{courseList}}">

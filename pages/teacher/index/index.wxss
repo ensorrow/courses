@@ -59,4 +59,5 @@
 .scroll{
   background: #f2f2f2;
   flex: 1;
+  height: 100vh;
 }

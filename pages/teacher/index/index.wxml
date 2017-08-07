@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <scroll-view scroll-y height="100%" class="scroll">
+  <scroll-view enable-back-to-top bindscrolltolower="loadMore" scroll-y class="scroll">
     <view class="search">
       <input bindconfirm="search" placeholder="搜索" class="input" placeholder-class="placeholder"/>
     </view>

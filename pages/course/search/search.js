@@ -6,23 +6,10 @@ Page({
   data: {
     value: "",
     type: 'course',
-    dataList: [
-      {
-        id: 1,
-        title: '工科数学分析',
-        summary: '圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的'
-      },
-      {
-        id: 2,
-        title: '工科数学分析2',
-        summary: '圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的'
-      },
-      {
-        id: 3,
-        title: '工科数学分析3',
-        summary: '圣诞节爱神的箭爱的暗红色的挥洒的骄傲哈倒计时大红色的'
-      }
-    ]
+    dataList: [],
+    page: 1,
+    lastPage: 1,
+    lock: false
   },
   onLoad(options) {
     this.setData({
@@ -32,24 +19,70 @@ Page({
     this.getResult(options.value);
   },
   search(event) {
+    this.setData({ page: 1, value: event.detail.value});
     this.getResult(event.detail.value);
   },
   getResult(value) {
+    wx.showLoading({
+      title: '加载中',
+    });
     req.get('/post/s?q='+value+'&page=1')
       .then((res) => {
         if(this.data.type === 'course') {
           this.setData({
             dataList: res.data.data.filter(
               (item) => item.type === 'course'
-            )
+            ),
+            lastPage: res.data.last_page
           });
         } else {
           this.setData({
             dataList: res.data.data.filter(
               (item) => item.type === 'teacher'
-            )
+            ),
+            lastPage: res.data.last_page
           });
         }
       })
+      .then(() => {
+        wx.hideLoading();
+      });
+  },
+  loadMore(){
+    if (this.data.lock) return;// 避免多次触发
+    var pageCount = this.data.page + 1;
+    if(pageCount>this.data.lastPage) {
+      wx.showToast({
+        title: '没有更多数据啦',
+      });
+      return;
+    }
+    this.setData({ lock: true });    
+    wx.showLoading({
+      title: '加载中',
+    });
+    req.get('/post/s?q=' + this.data.value + '&page=' + pageCount)
+      .then((res) => {
+        if (this.data.type === 'course') {
+          this.setData({
+            dataList: this.data.dataList.concat(res.data.data.filter(
+              (item) => item.type === 'course'
+            )),
+            page: pageCount,
+            lock: false
+          });
+        } else {
+          this.setData({
+            dataList: this.data.dataList.concat(res.data.data.filter(
+              (item) => item.type === 'teacher'
+            )),
+            page: pageCount,
+            lock: false
+          });
+        }
+      })
+      .then(() => {
+        wx.hideLoading();
+      });
   }
 })

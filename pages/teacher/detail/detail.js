@@ -101,5 +101,15 @@ Page({
         title: '复制失败！'
       }
     });
+  },
+  onShareAppMessage() {
+    return {
+      title: this.data.title,
+      success: function () {
+        wx.showToast({
+          title: '转发成功',
+        });
+      }
+    };
   }
 })
