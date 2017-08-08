@@ -7,7 +7,7 @@
         <navigator hover-class="nav-hover" url="../detail/detail?id={{item.id}}">
           <view class="course_item">
               <view class="course_title">{{item.title}}</view>
-              <view class="course_summary">{{item.excerpt}}</view>
+              <view class="course_summary">{{item.excerpt||'这门课还没有简介~'}}</view>
           </view>
         </navigator>
       </block>

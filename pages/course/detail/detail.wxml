@@ -1,27 +1,30 @@
 <!--pages/course/detail/detail.wxml-->
 <view class="container detail">
   <view class="title">{{title}}</view>
-  <view class="other">分类：{{category}}</view>
-  <view class="other">学分：{{credit}}</view>
+  <view class="other">分类：{{category||'暂无相关信息'}}</view>
+  <view class="other">学分：{{credit||'暂无相关信息'}}</view>
   <view class="block">
     <view class="subHeader">课程简介</view>
-    <view class="summary">{{content}}</view>
+    <view class="summary">{{content || '暂无简介'}}</view>
   </view>
   <view class="block">
     <view class="subHeader">课程资料</view>
-    <view wx:key="{{index}}" wx:for="{{resources}}">
-      <view class="linkWra">
-        <view class="link" bindtap="review" data-link="{{item.link}}">{{item.name}}</view>
-        <view class="copy" data-link="{{item.link}}" bindtap="copy">复制链接</view>
+    <view wx:if="{{downloads.length}}">
+      <view wx:key="{{index}}" wx:for="{{downloads}}">
+        <view class="linkWra">
+          <view class="link" bindtap="review" data-link="{{item.link}}">{{item.title}}</view>
+          <view class="copy" data-link="{{item.url}}" bindtap="copy">复制链接</view>
+        </view>
       </view>
+      <view class="tip">* 请复制链接到浏览器中进行下载</view>
     </view>
-    <view class="tip">* 点击可预览，要下载请复制链接在浏览器中打开</view>
+    <view class="plh" wx:else>暂无相关资料</view>
   </view>
   <view class="block">
     <view class="subHeader">任课老师</view>
     <block wx:key="{{index}}" wx:for="{{teachers}}">
       <navigator class="teachWra" url="{{'../../teacher/detail/detail?id='+item.id}}">
-        <image class="avatar" src="{{item.avatar}}"></image>
+        <image class="avatar" src="{{item.avatar||'../../../static/imgs/avatar.png'}}"></image>
         <view class="name">{{item.title}}</view>
         <view class="intro">{{item.excerpt}}</view>
       </navigator>
@@ -29,12 +32,15 @@
   </view>
   <view class="block">
     <view class="subHeader">评论 <view class="iconfont icon-pen edit" bindtap="showInput"> 写评论</view></view>
-    <block wx:key="{{index}}" wx:for="{{comments}}">
-      <view class="comment">
-        <view class="msg">{{item.comment}}</view>
-        <view class="like liked"><view class="iconfont icon-like"></view> {{item.like}}</view>
-      </view>
-    </block>
+    <view wx:if="{{comments.length}}">
+      <block wx:key="{{index}}" wx:for="{{comments}}">
+        <view class="comment">
+          <view class="msg">{{item.content}}</view>
+          <view class="like liked"><view class="iconfont icon-like"></view> {{item.like}}</view>
+        </view>
+      </block>
+    </view>
+    <view wx:else class="plh">期待你的神评论</view>
   </view>
   <view wx:if="{{isShow}}" bindtap="hideInput" class="modal">
     <view class="inputWra">

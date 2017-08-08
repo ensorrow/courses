@@ -92,3 +92,6 @@ input{
   padding-left: 10rpx;
   padding-right: 10rpx;
 }
+.plh{
+  font-size: .6rem;
+}

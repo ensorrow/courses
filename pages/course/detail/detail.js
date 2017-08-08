@@ -47,15 +47,10 @@ Page({
     req.post('/post/' + this.data.id + '/comment', { content: event.detail.value})
       .then(() => {
         wx.showToast({
-          title: '评论成功',
+          title: '评论成功，审核后才显示哦~',
           icon: 'success'
         });
-      })
-      .then(() => {
-        this.setData({
-          comments: this.data.comments.concat(comment)
-        });
-        this.hideInput();        
+        this.hideInput();
       });
   },
   copy(event) {
