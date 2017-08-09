@@ -1,5 +1,4 @@
 import req from '../../../utils/request';
-// import cache from '../../../utils/storage';
 
 Page({
   data: {
@@ -12,10 +11,8 @@ Page({
   },
   onLoad() {
     req.get('/post/courses/categorized')
-      .then((res) => {
-        this.setData({
-          courseList: res.data
-        });
-      })
+      .then((res) => this.setData({
+        courseList: res.data
+      }));
   }
 })
