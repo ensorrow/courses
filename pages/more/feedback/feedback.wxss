@@ -1,3 +1,6 @@
+.container{
+  height: 100vh;
+}
 .weui-btn {
   margin: 15px 20rpx;
   display: block;

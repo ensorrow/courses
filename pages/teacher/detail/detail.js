@@ -51,9 +51,6 @@ Page({
         });
       })
       .then(() => {
-        this.setData({
-          comments: this.data.comments.concat(comment)
-        });
         this.hideInput();
       });
   },

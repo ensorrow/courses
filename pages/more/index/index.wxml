@@ -1,5 +1,6 @@
 <view class="container">
   <image src="../../../static/imgs/logo.png"></image>
+  <view class="version">version 1.0.0</view>
   <navigator url="../feedback/feedback">
     <view class="listitem more">意见反馈  <view class="iconfont icon-more"></view></view>
   </navigator>

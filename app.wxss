@@ -7,7 +7,7 @@
 }
 .container {
   font-family: "PingFang SC","Microsoft YaHei","Helvetica Neue", Helvetica,  "Hiragino Sans GB",  "微软雅黑", Arial, sans-serif;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   background: #f4f4f4;
