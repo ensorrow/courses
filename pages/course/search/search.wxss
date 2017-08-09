@@ -1,0 +1,82 @@
+/* pages/course/search/search.wxss */
+.search{
+  height: 60rpx;
+  padding: 10rpx;
+  background: #f2f2f2;
+}
+.input{
+  background: #fff;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+  padding: 0 10rpx;
+}
+.placeholder{
+  text-align: center;
+}
+.scroll{
+  background: #f2f2f2;
+  flex: 1;
+  height: 100vh;
+}
+.block{
+  padding: 20rpx;
+  margin-bottom: 40rpx;
+  background: #fff;
+}
+.title{
+  border-bottom: 1px solid #ccc;
+  font-size: 24rpx;
+  color: #999;
+  padding-bottom: 20rpx;
+}
+.course_item{
+  padding: 40rpx 0;
+  border-bottom: 1px solid #ccc;
+}
+.course_title{
+  color: #333;
+  font-size: 32rpx;
+  margin-bottom: 24rpx;
+}
+.course_summary{
+  color: #999;
+  font-size: 24rpx;
+}
+.teachWra{
+  padding: 20rpx 0;
+  border-bottom: 1px solid #ccc;
+}
+.teachWra:last-child{
+  border-bottom: none;
+}
+.teachWra::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.avatar{
+  width: 180rpx;
+  height: 180rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.name{
+  font-size: .9rem;
+  margin-top: 10rpx;
+}
+.intro{
+  font-size: .6rem;
+  color: #999;
+  margin-top: 20rpx;
+}
+.title{
+  border-bottom: 1px solid #ccc;
+  font-size: 24rpx;
+  color: #999;
+  padding-bottom: 20rpx;
+}
+.plh{
+  padding-top: 20rpx;
+  text-align: center;
+  font-size: .6rem;
+}

@@ -1,0 +1,144 @@
+/* pages/course/detail/detail.wxss */
+.detail{
+  padding: 20rpx;
+}
+.title{
+  font-size: 64rpx;
+  margin: 60rpx 0 0rpx;
+}
+.other{
+  font-size: 32rpx;
+  margin-top: 8rpx;
+}
+.score{
+  margin-bottom: 20rpx;
+}
+.block{
+  margin: 20rpx 0;
+}
+.subHeader{
+  font-size: 48rpx;
+  margin-bottom: 16rpx;
+}
+.summary{
+  color: #a9a9a9;
+  font-size: 28rpx;
+  line-height: 150%;
+}
+.linkWra{
+  margin: 8rpx 0;
+}
+.linkWra::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.link{
+  color: rgb(0,138,255);
+  font-size: 28rpx;
+  float: left;
+  padding: 7rpx 0;
+}
+.tip{
+  font-size: 28rpx;
+}
+.copy{
+  padding: 6rpx;
+  border: 1px solid rgb(0,138,255);
+  border-radius: 6rpx;
+  float: right;
+  font-size: 28rpx;
+  color: rgb(0,138,255);
+}
+.teachWra{
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f7f7f7;
+}
+.teachWra:last-child{
+  border-bottom: none;
+}
+.teachWra::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.avatar{
+  width: 150rpx;
+  height: 150rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.name{
+  font-size: 36rpx;
+  margin-top: 10rpx;
+}
+.intro{
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 20rpx;
+}
+.more{
+  font-size: 24rpx;
+  padding-top: 20rpx;
+  color: #008aff;
+}
+.comment{
+  font-size: 28rpx;
+  color: #666;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f7f7f7;
+}
+.comment::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.msg{
+  float: left;
+  width: 600rpx;
+}
+.liked{
+  color: rgb(0,138,255);
+}
+.like{
+  width: 70rpx;
+  text-align: right;
+  float: right;
+}
+.iconfont{
+  display: inline;
+  font-size: 28rpx;
+}
+.icon-like{
+  font-size: 48rpx;
+}
+.comment:last-child{
+  border-bottom: none;
+}
+.edit{
+  font-size: 28rpx;
+  margin-top: .3rem;
+  float: right;
+  color: rgb(0,138,255);
+}
+.modal{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.inputWra{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background-color: #f2f2f2;
+}
+input{
+  font-size: 28rpx;
+  background-color: #fff;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}

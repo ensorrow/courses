@@ -1,0 +1,27 @@
+<!--pages/course/search/search.wxml-->
+<!--index.wxml-->
+<view class="container">
+  <scroll-view scroll-y bindscrolltolower="loadMore" class="scroll">
+    <view class="search">
+      <input bindconfirm="search" placeholder="搜索" class="input" placeholder-class="placeholder" value="{{value}}"/>
+    </view>
+    <view class="block">
+      <view class="title">{{type === 'course' ? '相关课程' : '相关教师'}}</view>
+      <view wx:if="{{dataList.length}}">
+        <navigator wx:if="{{type === 'course'}}" wx:key="{{index}}" wx:for="{{dataList}}" hover-class="nav-hover" url="../detail/detail?id={{item.id}}">
+          <view class="course_item">
+              <view class="course_title">{{item.title}}</view>
+              <view class="course_summary">{{item.excerpt||'这门课还没有简介~'}}</view>
+          </view>
+        </navigator>
+        <navigator wx:if="{{type === 'teacher'}}" wx:key="{{index}}" wx:for="{{dataList}}" class="teachWra" hover-class="nav-hover" url="../../teacher/detail/detail?id={{item.id}}">
+          <image class="avatar" src="{{item.avatar||'../../../static/imgs/avatar.png'}}"></image>
+          <view class="name">{{item.title}}</view>
+          <view class="intro">{{item.excerpt||'这位老师还没有简介~'}}</view>
+        </navigator> 
+      </view>
+      <view class="plh" wx:else>暂无相关结果</view>
+    </view>
+  </scroll-view>
+</view>
+

@@ -1,0 +1,62 @@
+.search{
+  height: 60rpx;
+  padding: 20rpx 0 5rpx 0;
+  background: #efeff4;
+}
+.input{
+  background: #fff;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+  padding: 0 10rpx;
+}
+.placeholder{
+  text-align: center;
+}
+.teachWra{
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f7f7f7;
+}
+.teachWra:last-child{
+  border-bottom: none;
+}
+.teachWra::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.avatar{
+  width: 150rpx;
+  height: 150rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.name{
+  font-size: 36rpx;
+  margin-top: 10rpx;
+}
+.intro{
+  font-size: 28rpx;
+  color: #a9a9a9;
+  margin-top: 20rpx;
+}
+.title{
+  border-bottom: 1px solid #f7f7f7;
+  font-size: 24rpx;
+  color: #999;
+  padding-bottom: 20rpx;
+}
+.more{
+  font-size: 24rpx;
+  padding-top: 20rpx;
+  color: #008aff;
+}
+.block{
+  padding: 20rpx;
+  margin-bottom: 40rpx;
+  background: #fff;
+}
+.scroll{
+  background: #f2f2f2;
+  flex: 1;
+  height: 100vh;
+}

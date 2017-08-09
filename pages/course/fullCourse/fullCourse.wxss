@@ -1,0 +1,32 @@
+/* pages/fullCourse/fullCourse.wxss */
+.scroll{
+  background: #f2f2f2;
+  flex: 1;
+  height: 100vh;
+}
+.block{
+  margin-bottom: 40rpx;
+  background: #fff;
+}
+.title{
+  padding:26rpx 24rpx;
+  font-size: 26rpx;
+  color: #a9a9a9;
+  font-weight: 400;
+}
+.course_item{
+  padding: 20rpx 24rpx;
+  border-bottom: 1px solid #f7f7f7;
+}
+.course_title{
+  color: #000;
+  font-size: 32rpx;
+  font-weight: 400;
+  margin-bottom: 16rpx;
+}
+.course_summary{
+  color: #a9a9a9;
+  font-size: 26rpx;
+  line-height: 150%;
+  font-weight: 400;
+}

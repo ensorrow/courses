@@ -1,0 +1,6 @@
+<view class="container">
+  <view>
+      <textarea bindinput="saveValue" placeholder="请输入反馈意见~" />
+  </view>
+  <button bindtap="sendFeedback" class="weui-btn" type="primary">提交</button>
+</view>
