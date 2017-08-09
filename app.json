@@ -7,7 +7,8 @@
 
     "pages/teacher/index/index",
     "pages/teacher/detail/detail",
-    "pages/more/index/index"
+    "pages/more/index/index",
+    "pages/more/feedback/feedback"
   ],
   "tabBar": {
     "color":"#a9b7b7",
@@ -24,13 +25,13 @@
         "pagePath": "pages/teacher/index/index",
         "text": "教师",
         "iconPath": "static/imgs/teacher.png",
-        "selectedIconPath": "static/imgs/teacher (1).png"
+        "selectedIconPath": "static/imgs/teacher(1).png"
       },
       {
         "pagePath": "pages/more/index/index",
         "text": "更多",
         "iconPath": "static/imgs/more.png",
-        "selectedIconPath": "static/imgs/more (1).png"
+        "selectedIconPath": "static/imgs/more(1).png"
       }
     ]
   },

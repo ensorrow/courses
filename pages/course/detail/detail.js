@@ -22,7 +22,10 @@ Page({
     req.get('/post/'+options.id+'/comment?page=1')
       .then((res) => {
         this.setData({
-          comments: res.data.data
+          comments: res.data.data.map((item) => {
+            item.liked = false;
+            return item;
+          })
         });
       });
   },
@@ -77,5 +80,24 @@ Page({
         });
       }
     };
+  },
+  like(e) {
+    var index = e.currentTarget.dataset.index;
+    var comments = this.data.comments;
+    if(comments[index].liked) {
+      wx.showToast({
+        title: '点过赞了哦~',
+      });
+    }else {
+      var id = e.currentTarget.dataset.id;
+      req.post('/comment/'+id+'/like')
+        .then(() => {
+          comments[index].likes_count++;
+          comments[index].liked = true;
+          this.setData({
+            comments: comments
+          });
+        });
+    }
   }
 })

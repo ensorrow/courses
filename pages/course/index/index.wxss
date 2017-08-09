@@ -1,5 +1,7 @@
 /**index.wxss**/
 .search{
+  position: fixed;
+  width: 100%;
   height: 60rpx;
   padding: 20rpx 0 5rpx 0;
   background: #efeff4;
@@ -20,6 +22,7 @@
   flex: 1;
 }
 .banner{
+  padding-top: 60rpx;
   display: block;
   width: 100%;
   height: 200px;
@@ -43,6 +46,7 @@
   background: #fff;
 }
 .title{
+  border-bottom: 1px solid #f7f7f7;
   padding:26rpx 24rpx;
   font-size: 26rpx;
   color: #a9a9a9;

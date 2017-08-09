@@ -65,7 +65,6 @@
   color: rgb(0,138,255);
 }
 .like{
-  width: 70rpx;
   text-align: right;
   float: right;
 }

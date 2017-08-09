@@ -1,0 +1,26 @@
+.weui-btn {
+  margin: 15px 20rpx;
+  display: block;
+  font-size: 28rpx;
+  background: #008aff;
+  color: #fff;
+}
+.weui-btn:first-child {
+  margin-top: 0;
+}
+.inputArea{
+  background: #fff;
+  width: 100%;
+  padding: 16rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.title{
+  font-size: 28rpx;
+  margin: 20rpx;
+  color: #999;
+}
+input.inputArea{
+  font-family: "PingFang SC","Microsoft YaHei","Helvetica Neue", Helvetica,  "Hiragino Sans GB",  "微软雅黑", Arial, sans-serif;
+  height: auto;
+}

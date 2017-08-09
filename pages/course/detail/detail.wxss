@@ -101,7 +101,6 @@
   color: rgb(0,138,255);
 }
 .like{
-  width: 70rpx;
   text-align: right;
   float: right;
 }
@@ -137,7 +136,8 @@
   background-color: #f2f2f2;
 }
 input{
-  font-size: 28rpx;
+  font-family: "PingFang SC","Microsoft YaHei","Helvetica Neue", Helvetica,  "Hiragino Sans GB",  "微软雅黑", Arial, sans-serif!;
+  font-size: 36rpx;
   background-color: #fff;
   padding-left: 10rpx;
   padding-right: 10rpx;

@@ -1,6 +1,9 @@
 <view class="container">
-  <view>
-      <textarea bindinput="saveValue" placeholder="请输入反馈意见~" />
-  </view>
-  <button bindtap="sendFeedback" class="weui-btn" type="primary">提交</button>
+  <image src="../../../static/imgs/logo.png"></image>
+  <navigator url="../feedback/feedback">
+    <view class="listitem more">意见反馈  <view class="iconfont icon-more"></view></view>
+  </navigator>
+  <navigator url="../feedback/feedback">
+    <view class="listitem more" style="border-bottom: none;">联系我们  <view class="iconfont icon-more"></view></view>
+  </navigator>
 </view>

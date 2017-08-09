@@ -6,7 +6,7 @@
     </view>
     <view class="banner">
 
-      <image src="../../../static/imgs/banner.jpg" mode="aspectFill">  
+      <image src="../../../static/imgs/Banner-2.jpg" mode="aspectFill">  
       </image>
     </view>
     <view wx:key="{{index}}" wx:for="{{courseList}}" wx:for-item="cate" class="block">

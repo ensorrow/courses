@@ -1,13 +1,17 @@
 .search{
+  position: fixed;
+  width: 100%;
   height: 60rpx;
   padding: 20rpx 0 5rpx 0;
   background: #efeff4;
 }
 .input{
+  font-family: "PingFang SC","Microsoft YaHei","Helvetica Neue", Helvetica,  "Hiragino Sans GB",  "微软雅黑", Arial, sans-serif;
   background: #fff;
-  border-radius: 4rpx;
+  border-radius: 8rpx;
   font-size: 24rpx;
-  padding: 0 10rpx;
+  margin: 0 16rpx;
+  padding: 0 16rpx;
 }
 .placeholder{
   text-align: center;
@@ -54,6 +58,7 @@
   padding: 20rpx;
   margin-bottom: 40rpx;
   background: #fff;
+  padding-top: 80rpx;
 }
 .scroll{
   background: #f2f2f2;

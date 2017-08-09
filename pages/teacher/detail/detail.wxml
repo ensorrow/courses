@@ -24,7 +24,7 @@
       <block wx:key="{{index}}" wx:for="{{comments}}">
         <view class="comment">
           <view class="msg">{{item.content}}</view>
-          <view class="like liked"><view class="iconfont icon-like"></view> {{item.like}}</view>
+          <view data-index="{{index}}" data-id="{{item.id}}" bindtap="like" class="like {{item.liked?'liked':''}}"><view class="iconfont icon-like"></view> {{item.likes_count}}</view>
         </view>
       </block>
     </view>
