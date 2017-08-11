@@ -1,0 +1,10 @@
+<view class="container">
+  <image src="../../../static/imgs/logo.png"></image>
+  <view class="version">version 1.0.0</view>
+  <navigator url="../feedback/feedback">
+    <view class="listitem more">意见反馈  <view class="iconfont icon-more"></view></view>
+  </navigator>
+  <navigator url="../feedback/feedback">
+    <view class="listitem more" style="border-bottom: none;">关于e瞳  <view class="iconfont icon-more"></view></view>
+  </navigator>
+</view>

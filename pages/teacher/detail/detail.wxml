@@ -1,0 +1,39 @@
+<!--pages/teachers/detail/detail.wxml-->
+<view class="container detail">
+  <view class="title">{{title}}</view>
+  <view class="other">学院：{{department||'暂无学院信息'}}</view>
+  <view class="other score">Email：{{email||'暂无email信息'}}</view>
+  <view class="block">
+    <view class="subHeader">个人简介</view>
+    <view class="summary">{{excerpt|| '暂无简介'}}</view>
+  </view>
+  <view class="block">
+    <view class="subHeader">授课课程</view>
+    <block wx:key="{{index}}" wx:for="{{courses}}">
+      <navigator hover-class="nav-hover" url="../../course/detail/detail?id={{item.id}}">
+        <view class="course_item">
+          <view class="course_title">{{item.title}}</view>
+          <view class="course_summary">{{item.excerpt || '这门课还没有简介~'}}</view>
+        </view>
+      </navigator>
+    </block> 
+  </view>
+  <view class="block">
+    <view class="subHeader">经验说 <view class="iconfont icon-pen edit" bindtap="showInput"> 写经验</view></view>
+    <view wx:if="{{comments.length}}">
+      <block wx:key="{{index}}" wx:for="{{comments}}">
+        <view class="comment">
+          <view class="msg">{{item.content}}</view>
+          <view data-index="{{index}}" data-id="{{item.id}}" bindtap="like" class="like {{item.liked?'liked':''}}"><view class="iconfont icon-like"></view> {{item.likes_count}}</view>
+        </view>
+      </block>
+    </view>
+    <view wx:else class="plh">期待你的神评论</view>
+    <view class="botton" bindtap="showInput">我也说一句</view>
+  </view>
+  <view wx:if="{{isShow}}" bindtap="hideInput" class="modal">
+    <view class="inputWra">
+      <input placeholder="请开始你的表演" catchtap="stopPop" bindconfirm="sendComment" auto-focus/>
+    </view>
+  </view>
+</view>

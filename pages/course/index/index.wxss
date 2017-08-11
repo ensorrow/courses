@@ -1,0 +1,75 @@
+/**index.wxss**/
+.search{
+  position: fixed;
+  width: 100%;
+  height: 60rpx;
+  padding: 20rpx 0 5rpx 0;
+  background: #efeff4;
+}
+.input{
+  font-family: "PingFang SC","Microsoft YaHei","Helvetica Neue", Helvetica,  "Hiragino Sans GB",  "微软雅黑", Arial, sans-serif;
+  background: #fff;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  margin: 0 16rpx;
+  padding: 0 16rpx;
+}
+.placeholder{
+  text-align: center;
+}
+.scroll{
+  background: #f4f4f4;
+  flex: 1;
+}
+.banner{
+  padding-top: 60rpx;
+  display: block;
+  width: 100%;
+  height: 200px;
+  background: 100%;
+}
+.banner image{
+  width: 100%;
+  max-width: 100%;
+  height: 200px;
+}
+.banner-title{
+  color: #fff;
+  font-size: 72rpx;
+  font-weight: 400;
+  position: absolute;
+  left: 50%; top:110px;
+  transform: translate(-50%, -50%);
+}
+.block{
+  margin-bottom: 40rpx;
+  background: #fff;
+}
+.title{
+  border-bottom: 1px solid #f7f7f7;
+  padding:26rpx 24rpx;
+  font-size: 26rpx;
+  color: #a9a9a9;
+  font-weight: 400;
+}
+.course_item{
+  padding: 20rpx 24rpx;
+  border-bottom: 1px solid #f7f7f7;
+}
+.course_title{
+  color: #000;
+  font-size: 32rpx;
+  font-weight: 400;
+  margin-bottom: 16rpx;
+}
+.course_summary{
+  color: #a9a9a9;
+  font-size: 26rpx;
+  line-height: 150%;
+  font-weight: 400;
+}
+.more{
+  padding:24rpx 24rpx;
+  font-size: 28rpx;
+  color:#008aff;
+}
