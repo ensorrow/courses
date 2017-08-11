@@ -57,6 +57,7 @@ Page({
   onShareAppMessage() {
     return {
       title: this.data.title,
+      path: "pages/teacher/detail/detail?id=" + this.data.id,
       success: function () {
         wx.showToast({
           title: '转发成功',

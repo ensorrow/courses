@@ -167,7 +167,7 @@
   height: 100rpx;
   width: 100%;
   box-sizing: border-box;
-  padding: 15rpx 20rpx;
+  padding: 8px 20rpx;
   background-color: #efeff4;
 }
 input{

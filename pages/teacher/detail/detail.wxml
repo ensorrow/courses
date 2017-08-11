@@ -33,7 +33,7 @@
   </view>
   <view wx:if="{{isShow}}" bindtap="hideInput" class="modal">
     <view class="inputWra">
-      <input placeholder="请开始你的表演" catchtap="stopPop" bindconfirm="sendComment" auto-focus/>
+      <input cursor-spacing="8" placeholder="请开始你的表演" catchtap="stopPop" bindconfirm="sendComment" auto-focus/>
     </view>
   </view>
 </view>
