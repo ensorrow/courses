@@ -130,10 +130,7 @@
 input{
   font-family: "PingFang SC","Microsoft YaHei","Helvetica Neue", Helvetica,  "Hiragino Sans GB",  "微软雅黑", Arial, sans-serif;
   font-size: 36rpx;
-  height: 60rpx;
-  line-height: 60rpx;
   background-color: #fff;
-  padding-left: 20rpx;
-  padding-right: 10rpx;
+  padding: 6px 20rpx;
   border-radius: 9rpx;
 }

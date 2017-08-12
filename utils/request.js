@@ -1,9 +1,11 @@
 const host = 'https://course.eeyes.net/api';
 
 const request = function(url, options){
-  wx.showLoading({
-    title: '加载中',
-  });
+  if(options.showLoading) {
+    wx.showLoading({
+      title: '加载中',
+    });
+  }
   return new Promise(function (resolve, reject) {
     wx.request({
       url: host+url,
@@ -14,11 +16,15 @@ const request = function(url, options){
       method: options.method || 'GET',
       dataType: 'json',
       success: function(res) {
-        wx.hideLoading();
+        if(options.showLoading){
+          wx.hideLoading();
+        }
         resolve(res.data)
       },
       fail: function(res) {
-        wx.hideLoading();        
+        if (options.showLoading) {
+          wx.hideLoading();
+        }        
         reject(res.data);
       }
     })
@@ -26,10 +32,10 @@ const request = function(url, options){
 }
 
 export default {
-  get(url, data={}) {
-    return request(url, { method: 'GET',data });
+  get(url, data={}, showLoading=true) {
+    return request(url, { method: 'GET',showLoading,data });
   },
-  post(url, data = {}) {
-    return request(url, { method: 'POST', data });
+  post(url, data = {}, showLoading=true) {
+    return request(url, { method: 'POST',showLoading,data });
   }
 }

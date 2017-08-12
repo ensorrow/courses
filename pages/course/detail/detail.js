@@ -47,7 +47,7 @@ Page({
       comment: event.detail.value,
       like: 0
     };
-    req.post('/post/' + this.data.id + '/comment', { content: event.detail.value})
+    req.post('/post/' + this.data.id + '/comment', { content: event.detail.value}, false)
       .then(() => {
         wx.showToast({
           title: '评论成功，审核后才显示哦~',
@@ -91,7 +91,7 @@ Page({
       });
     }else {
       var id = e.currentTarget.dataset.id;
-      req.post('/comment/'+id+'/like')
+      req.post('/comment/'+id+'/like', {}, false)
         .then(() => {
           comments[index].likes_count++;
           comments[index].liked = true;
