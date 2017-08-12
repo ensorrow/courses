@@ -37,7 +37,7 @@
   },
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "rgb(0,138,255)",
+    "navigationBarBackgroundColor": "#592fff",
     "navigationBarTitleText": "e学堂",
     "navigationBarTextStyle":"#fff"
   }

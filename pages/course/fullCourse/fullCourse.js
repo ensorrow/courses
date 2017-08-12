@@ -28,15 +28,11 @@ Page({
       return;
     }
     this.setData({ lock: true });
-    wx.showLoading({
-      title: '加载中',
-    });
     req.get('/category/' + this.data.categoryName + '/courses?page='+pageCount)
       .then((res) => this.setData({
         courseList: this.data.courseList.concat(res.data.data),
         lock: false,
         page: pageCount
       }))
-      .then(() => wx.hideLoading());
   }
 })

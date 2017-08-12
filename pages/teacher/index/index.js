@@ -30,9 +30,6 @@ Page({
       return;
     }
     this.setData({ lock: true });
-    wx.showLoading({
-      title: '加载中',
-    });
     req.get('/post/teachers?&page=' + pageCount)
       .then((res) => {
         this.setData({
@@ -40,9 +37,6 @@ Page({
           page: pageCount,
           lock: false
         });
-      })
-      .then(() => {
-        wx.hideLoading();
       });
   }
 })

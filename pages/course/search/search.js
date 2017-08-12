@@ -23,9 +23,6 @@ Page({
     this.getResult(event.detail.value);
   },
   getResult(value) {
-    wx.showLoading({
-      title: '加载中',
-    });
     req.get('/post/s?q='+value+'&page=1')
       .then((res) => {
         if(this.data.type === 'course') {
@@ -43,9 +40,6 @@ Page({
             lastPage: res.data.last_page
           });
         }
-      })
-      .then(() => {
-        wx.hideLoading();
       });
   },
   loadMore(){
@@ -58,9 +52,6 @@ Page({
       return;
     }
     this.setData({ lock: true });    
-    wx.showLoading({
-      title: '加载中',
-    });
     req.get('/post/s?q=' + this.data.value + '&page=' + pageCount)
       .then((res) => {
         if (this.data.type === 'course') {
@@ -80,9 +71,6 @@ Page({
             lock: false
           });
         }
-      })
-      .then(() => {
-        wx.hideLoading();
       });
   }
 })
