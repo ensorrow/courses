@@ -15,6 +15,10 @@ Page({
   },
   sendFeedback() {
     console.log(this.data);
+    this.setData({
+      feedback: '',
+      contact: ''
+    });
     wx.showToast({
       title: '已收到您的反馈',
     });

@@ -4,7 +4,7 @@
 .weui-btn {
   margin: 15px 20rpx;
   display: block;
-  font-size: 28rpx;
+  font-size: 32rpx;
   background: #008aff;
   color: #fff;
 }
@@ -16,10 +16,10 @@
   width: 100%;
   padding: 16rpx;
   box-sizing: border-box;
-  font-size: 28rpx;
+  font-size: 32rpx;
 }
 .title{
-  font-size: 28rpx;
+  font-size: 32rpx;
   margin: 20rpx;
   color: #999;
 }

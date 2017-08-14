@@ -17,7 +17,7 @@ navigator{
   background: #fff;
   padding: 24rpx;
   padding-bottom: 0;
-  font-size: 28rpx;
+  font-size: 32rpx;
 }
 .listitem{
   border-bottom: 1px solid #f7f7f7;

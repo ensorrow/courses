@@ -1,0 +1,19 @@
+<view class="container">
+  <image class="banner" src="../../../static/imgs/banner.png"></image>
+  <view class="about">
+    <view class="title">About Us</view>
+    <view class="content">
+      <view>西安交通大学e瞳网，交大最好最专业的互联网社团</view>
+      <view>成立于2002年9月16日</view>
+      <view>“精彩有e瞳，美妙无异同”是我们的理念</view>
+      <view>“胜则举杯相庆，败则奋勇相救”是我们的信条</view>
+    </view>
+  </view>
+  <view class="join">
+    <view class="title">Join Us</view>
+    <view class="tip">扫描二维码关注我们（<text data-value="xjtueeyes" bindtap="copy">微信号:xjtueeyes</text>）</view>
+    <image class="scan" src="../../../static/imgs/scan.png"></image>
+    <view class="tip">扫描二维码加入新生群（<text data-value="657813400" bindtap="copy">群号：657813400</text>）</view>
+    <image class="scan" src="../../../static/imgs/scanqq.png"></image>
+  </view>
+</view>

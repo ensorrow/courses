@@ -1,0 +1,35 @@
+/* pages/more/contact/contact.wxss */
+.container{
+  padding: 20rpx;
+}
+.banner{
+  display: block;
+  width: auto;
+  height: 275.63rpx;
+}
+.about, .join{
+  margin: 30rpx 0;
+  text-align: center;
+}
+.title{
+  font-size: 36rpx;
+  font-weight: blod;
+  margin-bottom: 40rpx;
+}
+.content{
+  font-size: 28rpx;
+  line-height: 42rpx;
+}
+.tip{
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 20rpx;
+}
+.scan{
+  width: 600rpx;
+  height: 600rpx;
+  margin-bottom: 30rpx;
+}
+text{
+  color: #008aff;
+}

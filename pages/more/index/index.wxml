@@ -4,7 +4,7 @@
   <navigator url="../feedback/feedback">
     <view class="listitem more">意见反馈  <view class="iconfont icon-more"></view></view>
   </navigator>
-  <navigator url="../feedback/feedback">
+  <navigator url="../contact/contact">
     <view class="listitem more" style="border-bottom: none;">关于e瞳  <view class="iconfont icon-more"></view></view>
   </navigator>
 </view>
