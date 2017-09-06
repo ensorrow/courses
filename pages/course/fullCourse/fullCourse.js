@@ -1,4 +1,4 @@
-import req from '../../../utils/request';
+import { courseService } from '../../../utils/service';
 
 Page({
   data: {
@@ -12,7 +12,7 @@ Page({
     this.setData({
       categoryName: option.name
     });
-    req.get('/category/'+option.name+'/courses?page=1')
+    courseService.getFullCourse(option.name)
       .then((res) => this.setData({
         courseList: res.data.data,
         lastPage: res.data.last_page
@@ -28,7 +28,7 @@ Page({
       return;
     }
     this.setData({ lock: true });
-    req.get('/category/' + this.data.categoryName + '/courses?page='+pageCount)
+    courseService.getFullCourse(this.data.categoryName, pageCount)
       .then((res) => this.setData({
         courseList: this.data.courseList.concat(res.data.data),
         lock: false,

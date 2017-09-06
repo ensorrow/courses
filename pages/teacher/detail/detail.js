@@ -1,5 +1,4 @@
-// pages/teacher/detail/detail.js
-import req from '../../../utils/request';
+import { teacherService } from '../../../utils/service';
 
 Page({
   data: {
@@ -14,11 +13,11 @@ Page({
     this.setData({
       id: options.id
     });
-    req.get('/post/' + options.id)
+    teacherService.getDetail(options.id)
       .then((res) => {
         this.setData(Object.assign({}, res.data));
       });
-    req.get('/post/' + options.id + '/comment?page=1')
+    teacherService.getComments(options.id)
       .then((res) => {
         this.setData({
           comments: res.data.data
@@ -43,7 +42,7 @@ Page({
       comment: event.detail.value,
       like: 0
     };
-    req.post('/post/' + this.data.id + '/comment', { content: event.detail.value }, false)
+    teacherService.postComment(this.data.id, event.detail.value)
       .then(() => {
         wx.showToast({
           title: '评论成功，审核后才显示哦~',
@@ -75,6 +74,7 @@ Page({
     } else {
       var id = e.currentTarget.dataset.id;
       req.post('/comment/' + id + '/like', {}, false)
+      teacherService.postLike(id)
         .then(() => {
           comments[index].likes_count++;
           comments[index].liked = true;

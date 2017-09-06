@@ -1,4 +1,4 @@
-import req from '../../../utils/request';
+import {courseService} from '../../../utils/service';
 
 Page({
   data: {
@@ -10,7 +10,7 @@ Page({
     });
   },
   onLoad() {
-    req.get('/post/courses/categorized')
+    courseService.getCategorized()
       .then((res) => this.setData({
         courseList: res.data
       }));

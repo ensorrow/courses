@@ -1,4 +1,4 @@
-import req from '../../../utils/request';
+import { teacherService } from '../../../utils/service';
 
 Page({
   data: {
@@ -7,7 +7,7 @@ Page({
     page: 1
   },
   onLoad() {
-    req.get('/post/teachers?page=1')
+    teacherService.getList()
       .then(
         (res) => this.setData({
           teachers: res.data.data,
@@ -30,7 +30,7 @@ Page({
       return;
     }
     this.setData({ lock: true });
-    req.get('/post/teachers?&page=' + pageCount)
+    teacherService.getList(pageCount)
       .then((res) => {
         this.setData({
           teachers: this.data.teachers.concat(res.data.data),

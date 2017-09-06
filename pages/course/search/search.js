@@ -1,6 +1,4 @@
-// pages/course/search/search.js
-// common search
-import req from '../../../utils/request';
+import { courseService } from '../../../utils/service';
 
 Page({
   data: {
@@ -23,7 +21,7 @@ Page({
     this.getResult(event.detail.value);
   },
   getResult(value) {
-    req.get('/post/s?q='+value+'&page=1')
+    courseService.getSearch(value)
       .then((res) => {
         if(this.data.type === 'course') {
           this.setData({
@@ -52,7 +50,7 @@ Page({
       return;
     }
     this.setData({ lock: true });    
-    req.get('/post/s?q=' + this.data.value + '&page=' + pageCount)
+    courseService.getSearch(this.data.value, pageCount)
       .then((res) => {
         if (this.data.type === 'course') {
           this.setData({

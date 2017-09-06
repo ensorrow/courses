@@ -19,12 +19,19 @@ const request = function(url, options){
         if(options.showLoading){
           wx.hideLoading();
         }
-        resolve(res.data)
+        if(res.data.code == 200)
+          resolve(res.data);
+        else
+          reject(res.data);
       },
       fail: function(res) {
         if (options.showLoading) {
           wx.hideLoading();
-        }        
+        }
+        wx.showToast({
+          title: '意外错误',
+          image: '/static/imgs/fail.png'
+        });
         reject(res.data);
       }
     })

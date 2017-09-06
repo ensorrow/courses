@@ -1,5 +1,4 @@
-// pages/course/detail/detail.js
-import req from '../../../utils/request';
+import { courseService } from '../../../utils/service';
 
 Page({
   data: {
@@ -15,11 +14,11 @@ Page({
     this.setData({
       id: options.id
     });
-    req.get('/post/'+options.id)
+    courseService.getDetail(options.id)
       .then((res) => {
         this.setData(Object.assign({}, res.data));
       });
-    req.get('/post/'+options.id+'/comment?page=1')
+    courseService.getComments(options.id)
       .then((res) => {
         this.setData({
           comments: res.data.data.map((item) => {
@@ -47,7 +46,7 @@ Page({
       comment: event.detail.value,
       like: 0
     };
-    req.post('/post/' + this.data.id + '/comment', { content: event.detail.value}, false)
+    courseService.postComment(this.data.id, event.detail.value)
       .then(() => {
         wx.showToast({
           title: '评论成功，审核后才显示哦~',

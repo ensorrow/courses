@@ -1,3 +1,5 @@
+import { moreService } from '../../../utils/service';
+
 Page({
   data: {
     feedback: '',
@@ -14,13 +16,15 @@ Page({
     });
   },
   sendFeedback() {
-    console.log(this.data);
-    this.setData({
-      feedback: '',
-      contact: ''
-    });
-    wx.showToast({
-      title: '已收到您的反馈',
-    });
+    moreService.postFeedback(this.data)
+      .then(() => {
+        this.setData({
+          feedback: '',
+          contact: ''
+        });
+        wx.showToast({
+          title: '已收到您的反馈',
+        });
+      });
   }
 });
