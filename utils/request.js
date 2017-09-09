@@ -1,4 +1,4 @@
-const host = 'https://course.eeyes.net/api';
+const host = 'https://test.eeyes.net/api';
 
 const request = function(url, options){
   if(options.showLoading) {
@@ -21,8 +21,13 @@ const request = function(url, options){
         }
         if(res.data.code == 200)
           resolve(res.data);
-        else
-          reject(res.data);
+        else{
+          wx.showToast({
+            title: '意外错误',
+            image: '/static/imgs/error.png'
+          });
+          // reject(res.data);
+        }
       },
       fail: function(res) {
         if (options.showLoading) {
@@ -30,9 +35,9 @@ const request = function(url, options){
         }
         wx.showToast({
           title: '意外错误',
-          image: '/static/imgs/fail.png'
+          image: '/static/imgs/error.png'
         });
-        reject(res.data);
+        // reject(res.data);
       }
     })
   });

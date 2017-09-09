@@ -1,4 +1,5 @@
 import { courseService } from '../../../utils/service';
+import { teacherService } from '../../../utils/service';
 
 Page({
   data: {
@@ -20,25 +21,24 @@ Page({
     this.setData({ page: 1, value: event.detail.value});
     this.getResult(event.detail.value);
   },
-  getResult(value) {
-    courseService.getSearch(value)
-      .then((res) => {
-        if(this.data.type === 'course') {
+  getResult(value, page) {
+    if (this.data.type === 'course') {
+      courseService.getSearch(value, page)
+        .then((res) => {
           this.setData({
-            dataList: res.data.data.filter(
-              (item) => item.type === 'course'
-            ),
+            dataList: res.data.data,
             lastPage: res.data.last_page
-          });
-        } else {
+          })
+        });
+    }else{
+      teacherService.getSearch(value, page)
+        .then((res) => {
           this.setData({
-            dataList: res.data.data.filter(
-              (item) => item.type === 'teacher'
-            ),
+            dataList: res.data.data,
             lastPage: res.data.last_page
-          });
-        }
-      });
+          })
+        });
+    }
   },
   loadMore(){
     if (this.data.lock) return;// 避免多次触发
@@ -49,26 +49,25 @@ Page({
       });
       return;
     }
-    this.setData({ lock: true });    
-    courseService.getSearch(this.data.value, pageCount)
-      .then((res) => {
-        if (this.data.type === 'course') {
+    this.setData({ lock: true });
+    if (this.data.type === 'course') {
+      courseService.getSearch(this.data.value, pageCount)
+        .then((res) => {
           this.setData({
-            dataList: this.data.dataList.concat(res.data.data.filter(
-              (item) => item.type === 'course'
-            )),
+            dataList: this.data.dataList.concat(res.data.data),
             page: pageCount,
             lock: false
           });
-        } else {
+        });
+    }else{
+      teacherService.getSearch(this.data.value, pageCount)
+        .then((res) => {
           this.setData({
-            dataList: this.data.dataList.concat(res.data.data.filter(
-              (item) => item.type === 'teacher'
-            )),
+            dataList: this.data.dataList.concat(res.data.data),
             page: pageCount,
             lock: false
           });
-        }
-      });
+        });
+    }
   }
 })
