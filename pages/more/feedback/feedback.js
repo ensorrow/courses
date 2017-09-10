@@ -16,7 +16,7 @@ Page({
     });
   },
   sendFeedback() {
-    moreService.postFeedback({ feedback: this.data.feedback, contact: this.data.contact})
+    moreService.postFeedback(this.data.feedback, this.data.contact)
       .then(() => {
         this.setData({
           feedback: '',

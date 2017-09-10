@@ -18,5 +18,5 @@ export const teacherService = {
   getList: (page=1) => req.get(`/teacher?page=${page}`)
 };
 export const moreService = {
-  postFeedback: (content) => req.post('/feedback', {content})
+  postFeedback: (content, contact) => req.post('/feedback', {content, contact})
 }
