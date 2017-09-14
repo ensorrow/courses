@@ -90,9 +90,9 @@ Page({
       });
     }else {
       var id = e.currentTarget.dataset.id;
-      req.post('/comment/'+id+'/like', {}, false)
+      courseService.postLike(id)
         .then(() => {
-          comments[index].likes_count++;
+          comments[index].like_count++;
           comments[index].liked = true;
           this.setData({
             comments: comments
